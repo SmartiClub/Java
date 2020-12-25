@@ -1,1 +1,1 @@
-# Collection of simple wrappers for popular Java operations
+# Collection of simple wrappers for regular Java operations

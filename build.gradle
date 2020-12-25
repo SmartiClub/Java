@@ -7,11 +7,9 @@ version '0.1.0'
 
 java {
     withSourcesJar()
-    withJavadocJar()
 }
 
 repositories {
-    jcenter()
     mavenCentral()
 }
 

@@ -16,7 +16,9 @@ public class Objects {
     /**
      * Compare 2 objects
      *
-     * @return true if they are equal, false otherwise
+     * @param a - first object to compare
+     * @param b - second object to compare
+     * @return true if they are equal (or both null), false otherwise
      * @see java.util.Objects#equals(Object, Object)
      */
     @Contract("null, null->true; !null, null->false; null, !null->false;")
@@ -28,7 +30,9 @@ public class Objects {
     /**
      * Compare 2 objects
      *
-     * @return true if they are not equal, false otherwise
+     * @param a - first object to compare
+     * @param b - second object to compare
+     * @return true if they are not equal (or both null), false otherwise
      */
     @Contract("null, null -> false; !null, null -> true; null, !null -> true")
     public static boolean notEqual(@Nullable Object a, @Nullable Object b) {

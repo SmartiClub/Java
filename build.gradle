@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+}
+
+group 'club.smarti'
+version '0.1.0'
+
+java {
+    withSourcesJar()
+    withJavadocJar()
+}
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+dependencies {
+    // Code dependencies:
+    implementation 'org.jetbrains:annotations:16.0.2'
+
+    // Unit test environment:
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+tasks.named('jar') {
+    manifest {
+        attributes('Implementation-Title': "Smarti: Java utils",
+                'Implementation-Version': project.version)
+    }
+}

@@ -5,6 +5,8 @@ plugins {
 group 'club.smarti'
 version '0.1.0'
 
+compileJava.options.encoding = 'UTF-8'
+
 java {
     withSourcesJar()
 }
@@ -24,6 +26,10 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
 }
 
 tasks.named('jar') {

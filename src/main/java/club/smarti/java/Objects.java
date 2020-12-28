@@ -5,11 +5,11 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Java object operations
- * |
+ * *
  * Advantages:
- * - there are no Java/Android version limitations;
- * - extra @annotation as IDE hints;
- * - the inverted api (notEqual);
+ * – there are no Java/Android version limitations;
+ * – extra @annotation as IDE hints;
+ * – the inverted api (notEqual);
  */
 public class Objects {
 
@@ -21,7 +21,7 @@ public class Objects {
      * @return true if they are equal (or both null), false otherwise
      * @see java.util.Objects#equals(Object, Object)
      */
-    @Contract("null, null->true; !null, null->false; null, !null->false;")
+    @Contract(pure = true, value = "null, null->true; !null, null->false; null, !null->false;")
     public static boolean equal(@Nullable Object a, @Nullable Object b) {
         //noinspection EqualsReplaceableByObjectsCall
         return (a == b || (a != null && a.equals(b)));
@@ -34,7 +34,7 @@ public class Objects {
      * @param b - second object to compare
      * @return true if they are not equal (or both null), false otherwise
      */
-    @Contract("null, null -> false; !null, null -> true; null, !null -> true")
+    @Contract(pure = true, value = "null, null -> false; !null, null -> true; null, !null -> true")
     public static boolean notEqual(@Nullable Object a, @Nullable Object b) {
         return !equal(a, b);
     }

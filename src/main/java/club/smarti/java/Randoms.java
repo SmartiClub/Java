@@ -1,19 +1,22 @@
 package club.smarti.java;
 
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Random;
 
 /**
  * Random data generators
  * Note: generated values are not cryptographically secure
- * |
+ * *
  * Advantages:
- * - support value range
- * - some embedded asserts
- * - reused Random generator
+ * – support value range
+ * – some embedded asserts
+ * – reused Random generator
  *
  * @see java.util.concurrent.ThreadLocalRandom
  */
-public final class Randoms {
+public class Randoms {
 
     /**
      * Note: "Instances of java.util.Random are threadsafe" (C) Java 7, Oracle
@@ -21,11 +24,23 @@ public final class Randoms {
     private final static Random RND = new Random();
 
     /**
+     * Get shared instance of the generator
+     *
+     * @return the generator
+     */
+    @NotNull
+    @Contract(pure = true)
+    public static Random generator() {
+        return RND;
+    }
+
+    /**
      * Get random integer value [0, max), i.e. 0 <= x < max
      *
      * @param max value (exclusive)
      * @return next pseudorandom value
      */
+    @Contract(pure = true)
     public static int get(int max) {
         if (max <= 0) {
             throw new IllegalArgumentException("Incorrect range: " + max);
@@ -39,6 +54,7 @@ public final class Randoms {
      * @param max value (exclusive)
      * @return next pseudorandom value
      */
+    @Contract(pure = true)
     public static long get(long max) {
         if (max <= 0) {
             throw new IllegalArgumentException("Incorrect range: " + max);
@@ -56,6 +72,7 @@ public final class Randoms {
      * @param max value (exclusive)
      * @return next pseudorandom value
      */
+    @Contract(pure = true)
     public static float get(float max) {
         if (max <= 0) {
             throw new IllegalArgumentException("Incorrect range: " + max);
@@ -74,6 +91,7 @@ public final class Randoms {
      * @param max value (exclusive)
      * @return next pseudorandom value
      */
+    @Contract(pure = true)
     public static double get(double max) {
         if (max <= 0) {
             throw new IllegalArgumentException("Incorrect range: " + max);
@@ -90,6 +108,7 @@ public final class Randoms {
      *
      * @return next pseudorandom value
      */
+    @Contract(pure = true)
     public static boolean getBoolean() {
         return RND.nextBoolean();
     }
@@ -99,6 +118,7 @@ public final class Randoms {
      *
      * @return pseudorandom value
      */
+    @Contract(pure = true)
     public static int sign() {
         return get(2) == 1 ? 1 : -1;
     }

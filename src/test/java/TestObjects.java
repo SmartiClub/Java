@@ -5,6 +5,7 @@ import club.smarti.java.Objects;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+@SuppressWarnings("ConstantConditions")
 public class TestObjects {
 
     private final static Object OBJ = new Object();

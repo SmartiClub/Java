@@ -200,6 +200,5 @@ public class TestStrings {
             char ch = rnd.charAt(n);
             assertTrue(symbols.indexOf(ch) >= 0);
         }
-        System.out.println(rnd);
     }
 }

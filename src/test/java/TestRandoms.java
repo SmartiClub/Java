@@ -2,13 +2,19 @@ import org.junit.jupiter.api.Test;
 
 import club.smarti.java.Randoms;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@SuppressWarnings("SameParameterValue")
+@SuppressWarnings({"SameParameterValue", "ResultOfMethodCallIgnored"})
 public class TestRandoms {
 
     private final static int RUN_COUNT = 100_000;
+
+    @Test
+    public void testGenerator() {
+        assertEquals(Randoms.generator(), Randoms.generator()); // single instance
+    }
 
     @Test
     public void testInt() {
@@ -95,7 +101,7 @@ public class TestRandoms {
     @Test
     public void testBoolean() {
         for (int run = 0; run < RUN_COUNT; run++) {
-            boolean bool = Randoms.getBoolean();
+            Randoms.getBoolean();
         }
     }
 

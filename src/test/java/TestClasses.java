@@ -575,10 +575,10 @@ public class TestClasses {
         assertTrue(Classes.isAssignable(Object[].class, new Double[10]));
 
         assertTrue(Classes.isAssignable(Map.class, new HashMap<>()));
-        assertTrue(Classes.isAssignable(Map.class, new AbstractMap<>() {
+        assertTrue(Classes.isAssignable(Map.class, new AbstractMap<Integer, String>() {
             @NotNull
             @Override
-            public Set<Entry<Object, Object>> entrySet() {
+            public Set<Entry<Integer, String>> entrySet() {
                 return null;
             }
         }));

@@ -13,6 +13,10 @@ java {
 
 repositories {
     mavenCentral()
+    maven {
+        url "https://jitpack.io"
+        credentials { username 'jp_13id05knv8fmetgfrohs505fka' }
+    }
 }
 
 dependencies {

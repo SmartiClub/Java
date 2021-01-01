@@ -249,7 +249,7 @@ public class Strings {
     @NotNull
     @Contract("null -> fail")
     public static String webSafe(String str) throws UnsupportedEncodingException {
-        return URLEncoder.encode(str, StandardCharsets.UTF_8).replace("+", "%20");
+        return URLEncoder.encode(str, StandardCharsets.UTF_8.name()).replace("+", "%20");
     }
 
     /**

@@ -11,7 +11,7 @@ import org.jetbrains.annotations.Nullable;
  * – ...
  */
 @SuppressWarnings("DuplicatedCode")
-public final class Maths {
+public class Maths {
 
     /**
      * Get max value

@@ -11,7 +11,7 @@ import java.lang.reflect.Modifier;
  * *
  * Advantages:
  * – support primitive types
- * – reduce boilerplate
+ * – avoid client code duplication
  * – embedded asserts
  */
 @SuppressWarnings("RedundantIfStatement")

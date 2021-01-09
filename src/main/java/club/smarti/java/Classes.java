@@ -82,52 +82,6 @@ public class Classes {
     }
 
     /**
-     * Get class of item in the array
-     * In contradistinction to {@link Class#getComponentType()} it supports primitive type arrays
-     *
-     * @param cls - class to check
-     * @return item class
-     * @throws NullPointerException if the class is null
-     * @throws IllegalArgumentException if it's not array
-     */
-    @NotNull
-    @Contract(pure = true, value = "null -> fail")
-    public static Class<?> getComponentType(Class<?> cls) {
-        if (cls == null) {
-            throw new NullPointerException("Null class");
-        }
-        if (!isArray(cls)) {
-            throw new IllegalArgumentException("Not array: " + cls);
-        }
-
-        if (cls == boolean[].class) {
-            return boolean.class;
-        }
-        else if (cls == byte[].class) {
-            return byte.class;
-        }
-        else if (cls == short[].class) {
-            return short.class;
-        }
-        else if (cls == char[].class) {
-            return char.class;
-        }
-        else if (cls == int[].class) {
-            return int.class;
-        }
-        else if (cls == long[].class) {
-            return long.class;
-        }
-        else if (cls == float[].class) {
-            return float.class;
-        }
-        else if (cls == double[].class) {
-            return double.class;
-        }
-        return cls.getComponentType();
-    }
-
-    /**
      * Check if one class can be assigned from another class
      * In contradistinction to {@link Class#isAssignableFrom(Class)} it supports primitive data types
      *

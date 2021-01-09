@@ -125,34 +125,6 @@ public class TestClasses {
     }
 
     @Test
-    public void getComponentType_Successful() {
-        assertEquals(boolean.class, Classes.getComponentType(boolean[].class));
-        assertEquals(byte.class, Classes.getComponentType(byte[].class));
-        assertEquals(short.class, Classes.getComponentType(short[].class));
-        assertEquals(char.class, Classes.getComponentType(char[].class));
-        assertEquals(int.class, Classes.getComponentType(int[].class));
-        assertEquals(long.class, Classes.getComponentType(long[].class));
-        assertEquals(float.class, Classes.getComponentType(float[].class));
-        assertEquals(double.class, Classes.getComponentType(double[].class));
-        assertEquals(Object.class, Classes.getComponentType(Object[].class));
-        assertEquals(Boolean.class, Classes.getComponentType(Boolean[].class));
-        assertEquals(Integer.class, Classes.getComponentType(Integer[].class));
-        assertEquals(Double.class, Classes.getComponentType(Double[].class));
-        assertEquals(ArrayList.class, Classes.getComponentType(ArrayList[].class));
-        assertEquals(int[].class, Classes.getComponentType(int[][].class));
-        assertEquals(Map[].class, Classes.getComponentType(Map[][].class));
-
-        //noinspection InstantiatingObjectToGetClassObject
-        assertEquals(int.class, Classes.getComponentType(new int[10].getClass()));
-        //noinspection InstantiatingObjectToGetClassObject
-        assertEquals(Integer.class, Classes.getComponentType(new Integer[10].getClass()));
-
-        assertThrows(NullPointerException.class, () -> Classes.getComponentType(null));
-        assertThrows(IllegalArgumentException.class, () -> Classes.getComponentType(int.class));
-        assertThrows(IllegalArgumentException.class, () -> Classes.getComponentType(ArrayList.class));
-    }
-
-    @Test
     public void testIsAssignable_withoutAutoboxing() {
         assertTrue(Classes.isAssignable(boolean.class, boolean.class, false));
         assertFalse(Classes.isAssignable(boolean.class, Boolean.class, false));
